@@ -57,31 +57,31 @@ The five most informative charts from the analysis, each paired with its key ins
 ---
 
 ### 1. Charges vs Smoker Status
-![Charges vs Smoker](charges_vs_smoker.png)
+![Charges vs Smoker](02_charges_vs_smoker_boxplot.png)
 > **Insight:** Smokers pay **3.8× more** on average than non-smokers ($32,050 vs $8,441/year). Smoking is the single strongest predictor of insurance charges (r = 0.787) — far exceeding any other variable in the dataset.
 
 ---
 
 ### 2. Age vs Charges — Colored by Smoker Status
-![Age vs Charges by Smoker](age_vs_charges_smoker.png)
+![Age vs Charges by Smoker](03_age_vs_charges_by_smoker.png)
 > **Insight:** The scatter plot reveals **three distinct cost bands**. Smoking creates a permanently elevated band from age 18 onward — even young smokers frequently exceed the charges of 60-year-old non-smokers. Within each band, charges rise steadily with age (r = 0.298 overall).
 
 ---
 
 ### 3. BMI vs Charges — Colored by Smoker Status
-![BMI vs Charges by Smoker](bmi_vs_charges_smoker.png)
+![BMI vs Charges by Smoker](04_bmi_vs_charges_by_smoker.png)
 > **Insight:** A strong **interaction effect** exists between BMI and smoking. For non-smokers, higher BMI has minimal impact on charges. For smokers, crossing the obesity threshold (BMI ≥ 30) triggers a dramatic cost jump — the obese-smoker cluster in the top-right dominates the most expensive cases in the dataset.
 
 ---
 
 ### 4. Correlation Heatmap
-![Correlation Heatmap](correlation_heatmap.png)
+![Correlation Heatmap](07_correlation_heatmap.png)
 > **Insight:** Smoker status (r = 0.787) dwarfs all other predictors of charges. Age comes second (r = 0.298), followed by BMI (r = 0.198). Sex and number of children are near-zero, confirming they are weak standalone predictors. This heatmap provides a clear **priority ranking of risk factors**.
 
 ---
 
 ### 5. Outlier Detection — IQR Method
-![Outlier Detection](outlier_detection.png)
+![Outlier Detection](08_outlier_detection_boundary.png)
 > **Insight:** Using the IQR upper fence ($34,525), **139 individuals (10.4%)** are flagged as high-cost outliers. Of these, **97.8% are smokers** (vs only 20.5% in the full dataset), with an average age of 41.1 and average BMI of 35.56 — both above dataset averages. These form an identifiable high-risk subgroup worth flagging for review.
 
 ---
@@ -114,10 +114,21 @@ The five most informative charts from the analysis, each paired with its key ins
 .
 ├── insurance.csv                        ← Raw input dataset
 ├── cleaned_insurance_data.csv           ← Exported after cleaning
-├── LuckySaxena_HealthInsuranceEDA.ipynb ← Main EDA notebook 
-├── LuckySaxena_ProjectReport.docx       ← Word report 
-├── requirements.txt                     ← Pinned dependencies 
-└── README.md                            ← This file 
+├── LuckySaxena_HealthInsuranceEDA.ipynb ← Main EDA notebook
+├── LuckySaxena_ProjectReport.docx       ← Word report
+├── requirements.txt                     ← Pinned dependencies
+├── 01_univariate_distributions.png      ← Age / BMI / Charges distributions
+├── 02_charges_vs_smoker_boxplot.png     ← Charges by smoking status
+├── 03_age_vs_charges_by_smoker.png      ← Age vs charges (coloured by smoker)
+├── 04_bmi_vs_charges_by_smoker.png      ← BMI vs charges (coloured by smoker)
+├── 05_charges_by_region.png             ← Charges by region
+├── 06_charges_by_children.png           ← Charges by number of children
+├── 07_correlation_heatmap.png           ← Pearson correlation heatmap
+├── 08_outlier_detection_boundary.png    ← IQR outlier boundary
+├── 09_outlier_profile_charts.png        ← Outlier profiling (smoker %, age, BMI)
+├── 10_outlier_region_children.png       ← Outliers by region and children
+├── 11_outlier_top10_table.png           ← Top 10 highest-cost records
+└── README.md                            ← This file
 ```
 
 ---
