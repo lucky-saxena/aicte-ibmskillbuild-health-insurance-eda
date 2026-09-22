@@ -30,8 +30,6 @@ This project is a complete Exploratory Data Analysis (EDA) of the **Medical Cost
 | seaborn | 0.13.2 |
 | Jupyter | 1.0.0 |
 
-No machine-learning libraries, no web frameworks — analysis only.
-
 ---
 
 ## Setup & Run Instructions
